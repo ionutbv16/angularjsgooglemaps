@@ -1,0 +1,44 @@
+<div class="panel panel-default" ng-init="getItems()">
+  <div class="panel-heading">
+    <h3 class="panel-title">London Bus Stations Map</h3>
+    <div class='clear'><p>Please drag map then click on the markers to see station details</p></div>
+     
+  </div>
+  <div class="panel-body">
+
+    <div  >
+    <div id="map"></div>
+    <div id="station"> 
+        <div class='station_title'>{{station === '' ? 'Please click on left markers or stations bellow to check departures'   :  station}}</div>
+        <div id="repeat" ng-repeat="stationBus in stationBuses">
+          
+         <div><label id="names" >Line: {{stationBus.busno}}</label></div>
+         <div class='station_departures' ng-repeat="departure in stationBus.departures">
+              <div>Aimed departure time: <b>{{departure.aimed_departure_time}}</b>, direction: <b>{{departure.direction}}</b>, mode: {{departure.mode}}</div>
+         </div>  
+
+        </div>  
+
+    </div>
+     
+  </div>
+
+  <div class='clear'>
+      <div class='station_title'>All stations in selected area</div>
+      <div ng-repeat="item in items">
+        <div class="col-md-4">
+          <div class="">
+            <h4>{{item.name}}</h4>
+            <p>{{item.mode}}</p>
+            <p>{{item.atcocode}}</p>
+            <a class="btn btn-primary" ng-click="printStationDetails(item.atcocode, item.name)">View Details</a>
+          </div>
+
+        </div>
+      </div>
+ </div>
+
+
+
+  </div>
+</div>

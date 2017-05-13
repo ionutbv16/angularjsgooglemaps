@@ -1,0 +1,57 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+html, body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#map{
+    height:500px;
+    width:500px;
+    float: left;
+/*    box-shadow: 3px 3px 10px gray;*/
+    }
+#station{
+    padding:20px;
+    width:500px;
+    background-color: #eeeeee;
+    float: left;
+/*    box-shadow: 3px 3px 10px gray;*/
+    }
+.station_departures{
+    padding-bottom:10px;
+    font-size: 11px;
+}
+.clear{
+    clear:both; padding-top: 20px;
+}
+.station_title{
+    font-size: 18px; color: #006699;
+    padding-bottom: 20px;
+    }
+
+#repeat{
+     display: inline;
+     }
+#country_container {
+     margin: 8px 2px 2px 0px;
+     text-align: center;
+     width: 90px;
+     padding: 5px;
+     color: white;
+     background-color: gray;
+     font-size: 16px;
+     cursor: pointer;
+     }
+#country_container:hover {
+     box-shadow: 0px 0px 10px blue;
+     background-color: gray;
+     border: 1px solid gray;
+     cursor: pointer;
+     }
+#names {
+     cursor: pointer;
+       }
