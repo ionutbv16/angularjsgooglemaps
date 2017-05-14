@@ -43,3 +43,57 @@
 
   </div>
 </div>
+
+
+<div class="panel panel-default" ng-init="getItems()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Styling above list stations gradient with SCSS Preprocessor</h3>
+    <div class='clear'><p>using 'for' + 'if' conditions </p></div>
+     
+  </div>
+  <div class="panel-body">
+
+    <div  >
+     
+     <div style="BORDER: #cccccc 1px dashed; PADDING: 5px; WIDTH: 95%; BACKGROUND: #f0f0f0; COLOR: #000000; FONT-SIZE: 12px; OVERFLOW: auto; height:auto">
+<pre>
+$htmlFont :'Roboto', sans-serif;
+$stationBgColor: #eeeeee;
+$stationTitleColor: #006699;
+$stationTitleSize: 22px;
+$stationTitleTopMargin: 20px;
+$borderRadius: 6px;
+$paddingStations: 2px;
+
+html, body{
+  font-family: $htmlFont;
+}
+
+$prct-blue:3%;
+$blue: #006699;
+$white: #ffffff;
+
+
+@for $i from 0 through 4 {
+    .inner_station p:nth-child(#{$i}) {
+        background-color: mix($blue, $white, $prct-blue); border-radius: $borderRadius; padding:$paddingStations;
+        @if ($i == 1) {
+            font-size: $stationTitleSize; margin-top: $stationTitleTopMargin; color: $stationTitleColor;  
+        }
+        @if ($i == 4) {
+            font-style:italic;   
+        }
+    }
+    $prct-blue: $prct-blue + 5%;
+}</pre></div>
+
+     
+  </div>
+
+ 
+
+
+
+  </div>
+</div>
+
