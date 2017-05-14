@@ -3,9 +3,38 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$htmlFont :'Roboto', sans-serif;
+$stationBgColor: #eeeeee;
+$stationTitleColor: #006699;
+$stationTitleSize: 22px;
+$stationTitleTopMargin: 20px;
+$borderRadius: 6px;
+$paddingStations: 2px;
+
 html, body{
-  font-family: 'Roboto', sans-serif;
+  font-family: $htmlFont;
 }
+
+$prct-blue:3%;
+$blue: #006699;
+$white: #ffffff;
+
+
+@for $i from 0 through 4 {
+    .inner_station p:nth-child(#{$i}) {
+        background-color: mix($blue, $white, $prct-blue); border-radius: $borderRadius; padding:$paddingStations;
+        @if ($i == 1) {
+            font-size: $stationTitleSize; margin-top: $stationTitleTopMargin; color: $stationTitleColor;  
+        }
+        @if ($i == 4) {
+            font-style:italic;   
+        }
+    }
+    $prct-blue: $prct-blue + 5%;
+}
+ 
+ 
+
 
 
 #map{
@@ -17,7 +46,7 @@ html, body{
 #station{
     padding:20px;
     width:500px;
-    background-color: #eeeeee;
+    background-color: $stationBgColor;
     float: left;
 /*    box-shadow: 3px 3px 10px gray;*/
     }
@@ -29,29 +58,14 @@ html, body{
     clear:both; padding-top: 20px;
 }
 .station_title{
-    font-size: 18px; color: #006699;
+    font-size: 18px; color: $stationTitleColor;
     padding-bottom: 20px;
     }
 
 #repeat{
      display: inline;
      }
-#country_container {
-     margin: 8px 2px 2px 0px;
-     text-align: center;
-     width: 90px;
-     padding: 5px;
-     color: white;
-     background-color: gray;
-     font-size: 16px;
-     cursor: pointer;
-     }
-#country_container:hover {
-     box-shadow: 0px 0px 10px blue;
-     background-color: gray;
-     border: 1px solid gray;
-     cursor: pointer;
-     }
+ 
 #names {
      cursor: pointer;
        }

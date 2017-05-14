@@ -9,7 +9,7 @@
     <div  >
     <div id="map"></div>
     <div id="station"> 
-        <div class='station_title'>{{station === '' ? 'Please click on left markers or stations bellow to check departures'   :  station}}</div>
+        <div class='station_title'>{{station}}</div>
         <div id="repeat" ng-repeat="stationBus in stationBuses">
           
          <div><label id="names" >Line: {{stationBus.busno}}</label></div>
@@ -27,11 +27,12 @@
       <div class='station_title'>All stations in selected area</div>
       <div ng-repeat="item in items">
         <div class="col-md-4">
-          <div class="">
-            <h4>{{item.name}}</h4>
-            <p>{{item.mode}}</p>
+          <div class="inner_station">
+            <p>{{item.name}}</p>
+            <p>Mode: {{item.mode}}</p>
             <p>{{item.atcocode}}</p>
-            <a class="btn btn-primary" ng-click="printStationDetails(item.atcocode, item.name)">View Details</a>
+            <p>Latitude, Longitude: {{item.latitude}}, {{item.longitude}}</p>
+            <a class="btn btn-primary" ng-click="printStationDetails(item.atcocode, item.name)">Departures</a>
           </div>
 
         </div>
